@@ -1,0 +1,65 @@
+
+C:\cmder_mini
+λ mongosh
+Current Mongosh Log ID: 6362fd8788b8c80ed90ef593
+Connecting to:          mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+1.6.0
+Using MongoDB:          6.0.2
+Using Mongosh:          1.6.0
+
+For mongosh info see: https://docs.mongodb.com/mongodb-shell/
+
+------
+   The server generated these startup warnings when booting
+   2022-11-02T20:29:42.813-03:00: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+   2022-11-02T20:29:42.814-03:00: This server is bound to localhost. Remote systems will be unable to connect to this server. Start the server with --bind_ip <address> to specify which IP addresses it should serve responses from, or with --bind_ip_all to bind to all interfaces. If this behavior is desired, start the server with --bind_ip 127.0.0.1 to disable this warning
+------
+
+------
+   Enable MongoDB's free cloud-based monitoring service, which will then receive and display
+   metrics about your deployment (disk utilization, CPU, operation statistics, etc).
+
+   The monitoring data will be available on a MongoDB website with a unique URL accessible to you
+   and anyone you share the URL with. MongoDB may use this information to make product
+   improvements and to suggest MongoDB products and deployment options to you.
+
+   To enable free monitoring, run the following command: db.enableFreeMonitoring()
+   To permanently disable this reminder, run the following command: db.disableFreeMonitoring()
+------
+
+test> use mibaseParcial
+switched to db mibaseParcial
+mibaseParcial> db.createCollection('numeros')
+{ ok: 1 }
+mibaseParcial> show collections
+numeros
+mibaseParcial> db.numeros.insertOne({numero:7})
+{
+  acknowledged: true,
+  insertedId: ObjectId("6362fdf173c512ea302687e0")
+}
+mibaseParcial> db.numeros.insertOne({numero:8})
+{
+  acknowledged: true,
+  insertedId: ObjectId("6362fdf673c512ea302687e1")
+}
+mibaseParcial> db.numeros.insertOne({numero:9})
+{
+  acknowledged: true,
+  insertedId: ObjectId("6362fdff73c512ea302687e2")
+}
+mibaseParcial> db.numeros.insertOne({numero:11})
+{
+  acknowledged: true,
+  insertedId: ObjectId("636300b473c512ea302687e3")
+}
+mibaseParcial> db.numeros.find()
+[
+  { _id: ObjectId("6362fdf173c512ea302687e0"), numero: 7 },
+  { _id: ObjectId("6362fdf673c512ea302687e1"), numero: 8 },
+  { _id: ObjectId("6362fdff73c512ea302687e2"), numero: 9 },
+  { _id: ObjectId("6362fecbe457c5aa8b34f751"), numero: 45 },
+  { _id: ObjectId("6362fecee457c5aa8b34f752"), numero: 45 },
+  { _id: ObjectId("6362fed3e457c5aa8b34f753"), numero: 48 },
+  { _id: ObjectId("636300b473c512ea302687e3"), numero: 11 }
+]
+mibaseParcial>

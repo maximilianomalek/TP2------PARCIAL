@@ -1,0 +1,11 @@
+h2 {
+    color: #b9452e;
+    font-weight: bold;
+    font-size: 40px;    
+    text-transform: uppercase;
+
+}
+
+.btn-success{
+    background-color: #b9452e;
+}
